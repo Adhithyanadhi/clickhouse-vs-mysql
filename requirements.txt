@@ -1,0 +1,8 @@
+certifi==2024.12.14
+clickhouse-connect==0.8.14
+lz4==4.3.3
+PyMySQL==1.1.1
+pytz==2024.2
+urllib3==2.3.0
+zstandard==0.23.0
+cryptography
