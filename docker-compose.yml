@@ -11,7 +11,7 @@ services:
       - CLICKHOUSE_PASSWORD=
       - CLICKHOUSE_DB=default
     volumes:
-      - ./db/account_clickhouse.sql:/docker-entrypoint-initdb.d/init.sql:ro    
+      - ./db/schema/clickhouse.sql:/docker-entrypoint-initdb.d/init.sql:ro    
     healthcheck:
       test: ["CMD", "wget", "--spider", "http://localhost:8123/ping"]
       interval: 30s
@@ -27,7 +27,7 @@ services:
       MYSQL_ROOT_PASSWORD: root1234
       MYSQL_DATABASE: user_management      
     volumes:
-      - ./db/account_mysql.sql:/docker-entrypoint-initdb.d/init.sql:ro
+      - ./db/schema/mysql.sql:/docker-entrypoint-initdb.d/init.sql:ro
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
       interval: 10s
